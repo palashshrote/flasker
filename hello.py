@@ -20,7 +20,7 @@ def user(name):
     # return "<h1>Hello {}</h1>".format(name)
     return render_template('user.html', user_name=name)
 
-
+#internal server error
 @app.errorhandler(500)
 def page_not_found(e):
     return render_template('error.html')
