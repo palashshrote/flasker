@@ -3,7 +3,7 @@ from distutils.log import error
 import imp
 from unicodedata import name
 from wsgiref.validate import validator
-from flask import Flask, render_template
+from flask import Flask, render_template, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -18,11 +18,9 @@ class NamerForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
-
-
-
 @app.route('/')
 def index():
+    flash("Welcome to my blog!")
     my_name="Palash"
     my_stuff="Weather is quite <i>pleseant</i> today"
     fav_player=["L.Sen", "LinD", "LCW"]
@@ -51,6 +49,8 @@ def name():
     if form.validate_on_submit():
         name = form.name.data
         form.name.data = ''
+        flash("Form submitted successfully")
+
     return render_template("name.html", 
             name = name,
             form = form)
