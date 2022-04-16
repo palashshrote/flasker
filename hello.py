@@ -21,7 +21,7 @@ def user(name):
     return render_template('user.html', user_name=name)
 
 #internal server error
-@app.errorhandler(500)
+@app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error.html')
+    return render_template('error.html') 
 
