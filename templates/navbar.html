@@ -10,11 +10,11 @@
           <a class="nav-link" href="{{ url_for('user', name='Palash') }}">User Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('name') }}">Names</a>
+          <a class="nav-link" href="{{ url_for('name') }}">Name</a>
         </li>
-        <!-- <li class="nav-item">
-          <a href="nav-link" href="{{url_for('name')}}">Name</a>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('add_user')}}">Add user</a>
+        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
